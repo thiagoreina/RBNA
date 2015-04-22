@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+<title></title>
+
+<script type="text/javascript">
+
+function habilitaText(obj,id) {
+if(obj.checked == true){
+document.getElementById(id).disabled = true;
+}else{
+document.getElementById(id).disabled = false;
+}
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form name="Form" action="pagdois.php">
+<input type="checkbox" name="teste" id="tes" onClick="habilitaText(this,'tx1');habilitaText(this,'tx2');habilitaText(this,'tx3');habilitaText(this,'tx4');habilitaText(this,'tx5');" />
+A. <input type="text" name="qtd[0]" id="tx1" /><br><br>
+
+
+B. <input type="text" name="qtd[1]" id="tx2" /><br><br>
+
+
+C. <input type="text" name="qtd[2]" id="tx3" /><br><br>
+
+
+D. <input type="text" name="qtd[3]" id="tx4" /><br><br>
+
+
+E. <input type="text" name="qtd[4]" id="tx5" />
+<br><br>
+
+<input type="submit" name="env" value="Enviar">
+
+</form>
+
+</body>
+</html>

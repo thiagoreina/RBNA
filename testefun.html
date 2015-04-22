@@ -1,0 +1,910 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Intranet RBNA</title>
+
+        
+      
+      <link href="../fontes/alt.css" rel="stylesheet" type="text/css" />
+      
+      
+      <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+      <script src="../fontes/alt.js" type="text/javascript"></script>
+      <script type="text/javascript">
+
+            function excluir(id){
+                if(confirm('Deseja realmente Desligar esse Funcionário?')){
+                    //redirecionar para o excluir
+                    location.href="exc_funcionario.php?id="+id;
+                }
+            }
+
+        </script>
+        <script type="text/javascript">
+
+            function desativar(id){
+                if(confirm('Deseja remover este funcionário da gerência ?')){
+                    //redirecionar para o excluir
+                    location.href="gerente.php?id="+id;
+                }
+            }
+
+        </script>
+         <script type="text/javascript">
+
+            function ativar(id){
+                if(confirm('Deseja promover este funcionário a gerente ?')){
+                    //redirecionar para o excluir
+                    location.href="gerente.php?id="+id;
+                }
+            }
+
+        </script>
+<script type="text/javascript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+        <script type="text/javascript" src="dojo/dojo.js"></script>
+        <script type="text/javascript" src="dojo/utils.js"></script>
+<link href="../fontes/style.css" rel="stylesheet" type="text/css" />
+<link href="" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.verdana {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #333;
+	font-size: 14px;
+}
+.title {
+	font-weight: bold;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+}
+.aviso {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	color: #F00;
+}
+a:link {
+	color: #000;
+}
+a:visited {
+	color: #000;
+}
+a:hover {
+	color: #000;
+}
+a:active {
+	color: #00F;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+
+<body background="../imagens/bg1.jpg" class="bg">
+<div align="center" class="total">
+<div align="center">
+<table width="100%" border="0" align="center" cellpadding="2" cellspacing="2" >
+  <table width="100%" border="0" align="center" cellpadding="2" cellspacing="2" >
+    <tr>
+      <td width="36%" bgcolor="#FF0000" class="title">Intranet RBNA </td>
+      <td width="37%" bgcolor="#FF0000"><div align="center" class="title"> Cadastro de Funcionario</div></td>
+      <td width="19%" bgcolor="#FF0000" class="title">Olá Thiago </td>
+      <td width="8%" bgcolor="#FF0000"><a href="logout.php">Sair</a></td>
+    </tr>
+    <tr>
+      <td colspan="4" bgcolor="#0099CC"><div align="center">
+                <ul id="MenuBar1" class="MenuBarHorizontal">
+          <li><a href="index.php">Pagina Inicial</a></li>
+          <li><a href="#" class="MenuBarItemSubmenu">Obras</a>
+            <ul>
+              <li><a href="#" class="MenuBarItemSubmenu">RB</a>
+                <ul>
+                  <li><a href="edit_obras_rb.php">Editar</a></li>
+                  <li><a href="cad_obras_rb.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">CE</a>
+                <ul>
+                  <li><a href="edit_obras_ce.php">Editar</a></li>
+                  <li><a href="cad_obras_ce.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OA</a>
+                <ul>
+                  <li><a href="edit_obras_oa.php">Editar</a></li>
+                  <li><a href="cad_obras_oa.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OV</a>
+                <ul>
+                  <li><a href="edit_obras_ov.php">Editar</a></li>
+                  <li><a href="cad_obras_ov.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OW</a>
+                <ul>
+                  <li><a href="edit_obras_ow.php">Editar</a></li>
+                  <li><a href="cad_obras_ow.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OH</a>
+                <ul>
+                  <li><a href="edit_obras_oh.php">Editar</a></li>
+                  <li><a href="cad_obras_oh.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OI</a>
+                <ul>
+                  <li><a href="edit_obras_oi.php">Editar</a></li>
+                  <li><a href="cad_obras_oi.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OG</a>
+                <ul>
+                  <li><a href="edit_obras_og.php">Editar</a></li>
+                  <li><a href="cad_obras_og.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OM</a>
+                <ul>
+                  <li><a href="edit_obras_om.php">Editar</a></li>
+                  <li><a href="cad_obras_om.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OT</a>
+                <ul>
+                  <li><a href="edit_obras_ot.php">Editar</a></li>
+                  <li><a href="cad_obras_ot.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OD</a>
+                <ul>
+                  <li><a href="edit_obras_od.php">Editar</a></li>
+                  <li><a href="cad_obras_od.php">Cadastrar</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="MenuBarItemSubmenu">OK</a>
+                <ul>
+                  <li><a href="edit_obras_ok.php">Editar</a></li>
+                  <li><a href="cad_obras_ok.php">Cadastrar</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a class="MenuBarItemSubmenu" href="#">Administra&ccedil;&atilde;o</a>
+            <ul>
+              <li><a href="funcionario.php" class="MenuBarItemSubmenu">Funcionarios</a>
+                <ul>
+                  <li><a href="cad_funcionario.php">Cadastrar</a></li>
+                  <li><a href="con_funcionario.php">Editar</a></li>
+                  <li><a href="funcionario_desligado.php">Desligados</a></li>
+                </ul>
+              </li>
+              <li><a href="#">RH</a></li>
+              <li><a href="#">Fazer Solicita&ccedil;&atilde;o</a></li>
+              <li><a href="#" class="MenuBarItemSubmenu">Comunicado</a>
+                <ul>
+                  <li><a href="cad_comunicado.php">Cadastrar</a></li>
+                  <li><a href="edit_comunicado.php">Editar</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#" class="MenuBarItemSubmenu">Derpartamentos</a>
+            <ul>
+              <li><a href="dqua.php">DQUA</a></li>
+              <li><a href="dcor.php">DCOR</a></li>
+              <li><a href="dtec.php">DTEC</a></li>
+              <li><a href="dcom.php">DCOM</a></li>
+              <li><a href="dpdr.php">DPDR</a></li>
+              <li><a href="aomi.php">AOMI</a></li>
+              <li><a href="dadf.php">DADF</a></li>
+              <li><a href="dtre.php">DTRE</a></li>
+              <li><a href="dapr.php">DAPR</a></li>
+              <li><a href="dvin.php">DVIN</a></li>
+              <li><a href="dcer.php">DCER</a></li>
+              <li><a href="ce.php">CE</a></li>
+            </ul>
+          </li>
+                    <li><a href="#" class="MenuBarItemSubmenu">Clientes</a>
+            <ul>
+              <li><a href="edit_clientes.php">Editar</a></li>
+              <li><a href="cad_matriz.php">Cadastrar</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="MenuBarItemSubmenu">Eventos</a>
+            <ul>
+              <li><a href="cad_evento.php">Cadastrar</a></li>
+              <li><a href="edit_eveto.php">Editar</a></li>
+            </ul>
+          </li>
+          <li><a href="../intranet.php">Pagina do Usu&aacute;rio</a></li>
+        </ul>
+      </div></td>
+    </tr>
+    </table>
+      <p>         </table>
+</p>
+      
+        <div class="solicitacao"><span class="texto">Procurar Funcionarios:</span>
+
+         <input type="text"  onkeyup="ajax('dados_funcionario.php?nome='+this.value,'conteudo')" size="40"/>
+        
+      </div>
+<label>
+
+
+<p><div id="conteudo"> </p></span>
+
+?        <div align="center" class="aviso">
+  </div></div>
+<table width="94%" border="0" cellpadding="2" cellspacing="2">
+       
+          <tr>
+    <td  bgcolor=#666666 class='title'>Nome:</td>
+    <td  bgcolor=#666666 class='title'>Email:</td>
+	<td  bgcolor=#666666 class='title'>Login:</td>
+	<td  bgcolor=#666666 class='title'>Editar:</td>
+    <td  bgcolor=#666666 class='title'>Desligar:</td>
+	<td  bgcolor=#666666 class='title'>Usuario:</td>
+    <td  bgcolor=#666666 class='title'>Acesso:</td>
+    <td  bgcolor=#666666 class='title'><div align="center"><img src='../imagens/manager.png' width='15' height='15' /></div></td>
+    	</tr>
+<tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Abdiel  Ibañez</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>abdiel@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=119','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=119','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Abdiel  Ibañez');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('119')" onmouseover="tooltip.show('Desligar Abdiel  Ibañez da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >abdiel</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('119')" onmouseover="tooltip.show('Remover Abdiel  Ibañez da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('119')" onmouseover="tooltip.show('Promover Abdiel  Ibañez a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Adilson Laranja</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>laranja@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=79','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=79','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Adilson Laranja');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('79')" onmouseover="tooltip.show('Desligar Adilson Laranja da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >laranja</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('79')" onmouseover="tooltip.show('Remover Adilson Laranja da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('79')" onmouseover="tooltip.show('Promover Adilson Laranja a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Alan Soares</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>alan.soares@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=40','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=40','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Alan Soares');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('40')" onmouseover="tooltip.show('Desligar Alan Soares da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >alan.soares</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('40')" onmouseover="tooltip.show('Remover Alan Soares da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('40')" onmouseover="tooltip.show('Promover Alan Soares a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Alexandre Cynamon</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>alexandre.cynamon@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=41','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=41','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Alexandre Cynamon');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('41')" onmouseover="tooltip.show('Desligar Alexandre Cynamon da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >alexandre.cynamon</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('41')" onmouseover="tooltip.show('Remover Alexandre Cynamon da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Aline Garcez</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>aline.garcez@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=42','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=42','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Aline Garcez');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('42')" onmouseover="tooltip.show('Desligar Aline Garcez da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >aline.garcez</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#FF5151"><div class="solicitacao" >Administrador</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('42')" onmouseover="tooltip.show('Remover Aline Garcez da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Amália Panccioni</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>amalia.panccioni@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=44','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=44','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Amália Panccioni');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('44')" onmouseover="tooltip.show('Desligar Amália Panccioni da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >amalia.panccioni</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#AACBF2"><div class="solicitacao" >Obras</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('44')" onmouseover="tooltip.show('Remover Amália Panccioni da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('44')" onmouseover="tooltip.show('Promover Amália Panccioni a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Camilla Regina</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>camilla.teixeira@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=95','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=95','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Camilla Regina');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('95')" onmouseover="tooltip.show('Desligar Camilla Regina da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >camilla.teixeira</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('95')" onmouseover="tooltip.show('Remover Camilla Regina da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('95')" onmouseover="tooltip.show('Promover Camilla Regina a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Cintia Neves Brandão</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>dapr@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=84','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=84','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Cintia Neves Brandão');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('84')" onmouseover="tooltip.show('Desligar Cintia Neves Brandão da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >cintia.brandao</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('84')" onmouseover="tooltip.show('Remover Cintia Neves Brandão da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('84')" onmouseover="tooltip.show('Promover Cintia Neves Brandão a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Cristian Oliveira</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>cristian.oliveira@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=50','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=50','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Cristian Oliveira');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('50')" onmouseover="tooltip.show('Desligar Cristian Oliveira da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >cristian.oliveira</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('50')" onmouseover="tooltip.show('Remover Cristian Oliveira da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('50')" onmouseover="tooltip.show('Promover Cristian Oliveira a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Eduine  Pereira</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>eduine.pereira@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=121','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=121','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Eduine  Pereira');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('121')" onmouseover="tooltip.show('Desligar Eduine  Pereira da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >eduine.pereira</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#FF5151"><div class="solicitacao" >Administrador</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('121')" onmouseover="tooltip.show('Remover Eduine  Pereira da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('121')" onmouseover="tooltip.show('Promover Eduine  Pereira a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Fernando Boccolini</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>boccolini@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=52','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=52','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Fernando Boccolini');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('52')" onmouseover="tooltip.show('Desligar Fernando Boccolini da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >boccolini</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('52')" onmouseover="tooltip.show('Remover Fernando Boccolini da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Gisele Mozzo</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>gisele.mozzo@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=53','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=53','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Gisele Mozzo');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('53')" onmouseover="tooltip.show('Desligar Gisele Mozzo da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >gisele.mozzo</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#AACBF2"><div class="solicitacao" >Obras</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('53')" onmouseover="tooltip.show('Remover Gisele Mozzo da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Hillary Ardaya</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>hilary.ardaya@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=111','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=111','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Hillary Ardaya');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('111')" onmouseover="tooltip.show('Desligar Hillary Ardaya da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >hillary.ardaya</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('111')" onmouseover="tooltip.show('Remover Hillary Ardaya da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('111')" onmouseover="tooltip.show('Promover Hillary Ardaya a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Jorge Izoton</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>jorge.izoton@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=56','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=56','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Jorge Izoton');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('56')" onmouseover="tooltip.show('Desligar Jorge Izoton da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >jorge.izoton</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('56')" onmouseover="tooltip.show('Remover Jorge Izoton da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('56')" onmouseover="tooltip.show('Promover Jorge Izoton a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>José Messias Soares</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>messias.soares@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=57','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=57','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  José Messias Soares');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('57')" onmouseover="tooltip.show('Desligar José Messias Soares da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >messias.soares</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('57')" onmouseover="tooltip.show('Remover José Messias Soares da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('57')" onmouseover="tooltip.show('Promover José Messias Soares a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>karine alves</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>karine.alves@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=125','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=125','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  karine alves');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('125')" onmouseover="tooltip.show('Desligar karine alves da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >karine.alves</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('125')" onmouseover="tooltip.show('Remover karine alves da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('125')" onmouseover="tooltip.show('Promover karine alves a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Kazuo Kosaka Kajishima</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>kazuo@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=114','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=114','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Kazuo Kosaka Kajishima');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('114')" onmouseover="tooltip.show('Desligar Kazuo Kosaka Kajishima da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >kazuo</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('114')" onmouseover="tooltip.show('Remover Kazuo Kosaka Kajishima da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('114')" onmouseover="tooltip.show('Promover Kazuo Kosaka Kajishima a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Kellyane Vieira</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>dp@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=38','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=38','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Kellyane Vieira');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('38')" onmouseover="tooltip.show('Desligar Kellyane Vieira da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >kellyane.vieira</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#FF5151"><div class="solicitacao" >Administrador</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('38')" onmouseover="tooltip.show('Remover Kellyane Vieira da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('38')" onmouseover="tooltip.show('Promover Kellyane Vieira a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Léia de Mattos</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>leia@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=46','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=46','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Léia de Mattos');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('46')" onmouseover="tooltip.show('Desligar Léia de Mattos da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >leia</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#FF5151"><div class="solicitacao" >Administrador</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('46')" onmouseover="tooltip.show('Remover Léia de Mattos da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Leandro Chaves</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>leandro.chaves@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=91','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=91','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Leandro Chaves');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('91')" onmouseover="tooltip.show('Desligar Leandro Chaves da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >leandro.chaves</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('91')" onmouseover="tooltip.show('Remover Leandro Chaves da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('91')" onmouseover="tooltip.show('Promover Leandro Chaves a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Leidson Bezerra</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>leidson.bezerra@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=59','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=59','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Leidson Bezerra');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('59')" onmouseover="tooltip.show('Desligar Leidson Bezerra da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >leidson.bezerra</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('59')" onmouseover="tooltip.show('Remover Leidson Bezerra da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('59')" onmouseover="tooltip.show('Promover Leidson Bezerra a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Leny de Mattos</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>leny@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=83','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=83','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Leny de Mattos');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('83')" onmouseover="tooltip.show('Desligar Leny de Mattos da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >leny</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal |<img src='../imagens/pass.png' width='15' height='15' />|  </div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('83')" onmouseover="tooltip.show('Remover Leny de Mattos da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('83')" onmouseover="tooltip.show('Promover Leny de Mattos a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Lineker Araujo</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>lineker@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=120','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=120','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Lineker Araujo');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('120')" onmouseover="tooltip.show('Desligar Lineker Araujo da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >lineker</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('120')" onmouseover="tooltip.show('Remover Lineker Araujo da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('120')" onmouseover="tooltip.show('Promover Lineker Araujo a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Luiz Alberto de Mattos</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>luiz.mattos@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=75','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=75','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Luiz Alberto de Mattos');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('75')" onmouseover="tooltip.show('Desligar Luiz Alberto de Mattos da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >luiz.mattos</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('75')" onmouseover="tooltip.show('Remover Luiz Alberto de Mattos da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('75')" onmouseover="tooltip.show('Promover Luiz Alberto de Mattos a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Mayara Beatriz Ribas</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>recepcao@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=108','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=108','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Mayara Beatriz Ribas');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('108')" onmouseover="tooltip.show('Desligar Mayara Beatriz Ribas da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >mayara.ribas</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#AACBF2"><div class="solicitacao" >Obras</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('108')" onmouseover="tooltip.show('Remover Mayara Beatriz Ribas da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('108')" onmouseover="tooltip.show('Promover Mayara Beatriz Ribas a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Murilo Pereira da Silva</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>murilo.silva@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=64','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=64','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Murilo Pereira da Silva');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('64')" onmouseover="tooltip.show('Desligar Murilo Pereira da Silva da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >murilo.silva</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#AACBF2"><div class="solicitacao" >Obras</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('64')" onmouseover="tooltip.show('Remover Murilo Pereira da Silva da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('64')" onmouseover="tooltip.show('Promover Murilo Pereira da Silva a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Nicolas Hatta</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>nicolas.silva@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=93','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=93','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Nicolas Hatta');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('93')" onmouseover="tooltip.show('Desligar Nicolas Hatta da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >nicolas.silva</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('93')" onmouseover="tooltip.show('Remover Nicolas Hatta da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('93')" onmouseover="tooltip.show('Promover Nicolas Hatta a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Paulo Vitor da Silva</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>paulo.silva@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=63','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=63','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Paulo Vitor da Silva');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('63')" onmouseover="tooltip.show('Desligar Paulo Vitor da Silva da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >paulo.silva</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('63')" onmouseover="tooltip.show('Remover Paulo Vitor da Silva da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('63')" onmouseover="tooltip.show('Promover Paulo Vitor da Silva a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Rafael Carlos Lira</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>rafael.lira@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=112','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=112','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Rafael Carlos Lira');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('112')" onmouseover="tooltip.show('Desligar Rafael Carlos Lira da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >rafael.lira</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('112')" onmouseover="tooltip.show('Remover Rafael Carlos Lira da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('112')" onmouseover="tooltip.show('Promover Rafael Carlos Lira a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Rafael Nascimento</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>rafael.nascimento@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=66','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=66','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Rafael Nascimento');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('66')" onmouseover="tooltip.show('Desligar Rafael Nascimento da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >rafael.nascimento</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('66')" onmouseover="tooltip.show('Remover Rafael Nascimento da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('66')" onmouseover="tooltip.show('Promover Rafael Nascimento a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>RBNA RBNA</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>rbna@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=115','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=115','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  RBNA RBNA');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('115')" onmouseover="tooltip.show('Desligar RBNA RBNA da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >rbna</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#A9F3D8"><div class="solicitacao" >RH</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('115')" onmouseover="tooltip.show('Remover RBNA RBNA da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('115')" onmouseover="tooltip.show('Promover RBNA RBNA a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Renato Wall</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>wall@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=68','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=68','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Renato Wall');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('68')" onmouseover="tooltip.show('Desligar Renato Wall da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >wall</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#AACBF2"><div class="solicitacao" >Obras</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('68')" onmouseover="tooltip.show('Remover Renato Wall da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Rodrigo Luiz Mendes</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>rodrigo.mendes@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=110','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=110','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Rodrigo Luiz Mendes');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('110')" onmouseover="tooltip.show('Desligar Rodrigo Luiz Mendes da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >rodrigo.mendes</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('110')" onmouseover="tooltip.show('Remover Rodrigo Luiz Mendes da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('110')" onmouseover="tooltip.show('Promover Rodrigo Luiz Mendes a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Rodrigo Silva</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>rodrigo.silva@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=69','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=69','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Rodrigo Silva');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('69')" onmouseover="tooltip.show('Desligar Rodrigo Silva da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >rodrigo.silva</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('69')" onmouseover="tooltip.show('Remover Rodrigo Silva da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('69')" onmouseover="tooltip.show('Promover Rodrigo Silva a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Tabatha Melo</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>tabatha.melo@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=71','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=71','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Tabatha Melo');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('71')" onmouseover="tooltip.show('Desligar Tabatha Melo da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >tabatha.melo</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#FF5151"><div class="solicitacao" >Administrador</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('71')" onmouseover="tooltip.show('Remover Tabatha Melo da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class='divbtn' style='height:20px;'><div align="center">
+<img src="../imagens/manager.png" width="20" height="20" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Tacito Osinski</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>tacito.osinski@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=72','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=72','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Tacito Osinski');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('72')" onmouseover="tooltip.show('Desligar Tacito Osinski da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >tacito.osinski</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal |<img src='../imagens/pass.png' width='15' height='15' />|  </div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('72')" onmouseover="tooltip.show('Remover Tacito Osinski da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('72')" onmouseover="tooltip.show('Promover Tacito Osinski a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Teyla de Oliveira Bezerra</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>teyla.bezerra@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=82','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=82','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Teyla de Oliveira Bezerra');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('82')" onmouseover="tooltip.show('Desligar Teyla de Oliveira Bezerra da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >teyla.bezerra</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('82')" onmouseover="tooltip.show('Remover Teyla de Oliveira Bezerra da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('82')" onmouseover="tooltip.show('Promover Teyla de Oliveira Bezerra a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Thiago Reina Santos</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>thiago.santos@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=1','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=1','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Thiago Reina Santos');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('1')" onmouseover="tooltip.show('Desligar Thiago Reina Santos da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >thiagoreina</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#FF5151"><div class="solicitacao" >Administrador</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('1')" onmouseover="tooltip.show('Remover Thiago Reina Santos da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('1')" onmouseover="tooltip.show('Promover Thiago Reina Santos a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Tiago Rodrigues</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>tiago.rodrigues@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=80','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=80','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Tiago Rodrigues');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('80')" onmouseover="tooltip.show('Desligar Tiago Rodrigues da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >tiago.rodrigues</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('80')" onmouseover="tooltip.show('Remover Tiago Rodrigues da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('80')" onmouseover="tooltip.show('Promover Tiago Rodrigues a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Vânia Coelho</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>vania.coelho@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=123','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=123','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Vânia Coelho');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('123')" onmouseover="tooltip.show('Desligar Vânia Coelho da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >vania.coelho</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal |<img src='../imagens/pass.png' width='15' height='15' />|  </div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('123')" onmouseover="tooltip.show('Remover Vânia Coelho da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('123')" onmouseover="tooltip.show('Promover Vânia Coelho a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Victor Hugo de Carvalho</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>victor.carvalho@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=100','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=100','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Victor Hugo de Carvalho');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('100')" onmouseover="tooltip.show('Desligar Victor Hugo de Carvalho da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >victor.carvalho</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal</div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('100')" onmouseover="tooltip.show('Remover Victor Hugo de Carvalho da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('100')" onmouseover="tooltip.show('Promover Victor Hugo de Carvalho a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Wilson Carlos</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>wilson@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=76','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=76','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Wilson Carlos');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('76')" onmouseover="tooltip.show('Desligar Wilson Carlos da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >wilson</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal |<img src='../imagens/pass.png' width='15' height='15' />|  </div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('76')" onmouseover="tooltip.show('Remover Wilson Carlos da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('76')" onmouseover="tooltip.show('Promover Wilson Carlos a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr><tr><td bgcolor=#F7F7F7 class='texto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>Yuri Guedes</div></td><td bgcolor=#F7F7F7 class='textomenorpreto'><div class='solicitacao'><div class='divbtn' style='height:20px;'>yuri.guedes@rbna.org.br</div></td> 	
+	
+         <th bgcolor=#F7F7F7 class="texto"><a href="javascript:MM_openBrWindow('criar_login.php?id=90','edit','width=750,height=200')" onmouseover="tooltip.show('Editar Login');" onmouseout="tooltip.hide();" ><div class="solicitacao"><div class="divbtn" style='height:20px;' align="center"><img src="
+			 
+			 ../imagens/editlogin.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+		<th bgcolor="#F7F7F7" class="texto"><a href="javascript:MM_openBrWindow('editar_funcionario.php?id=90','edit','width=835,height=260')" onmouseover="tooltip.show('Editar Dados de:  Yuri Guedes');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;'><img src="../imagens/edit.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<th bgcolor=#F7F7F7 class="texto" align="center"><a href="javascript:excluir('90')" onmouseover="tooltip.show('Desligar Yuri Guedes da Empresa');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><div class="divbtn" style='height:20px;' align="center"><img src="../imagens/off.png" width="20" height="20" align="absmiddle" style="border:none"/></div></div></a></th>
+<td bgcolor=#F7F7F7 class='textomenorpreto'><div class='divbtn' style='height:20px;'><div class="solicitacao" >yuri.guedes</div></td>
+<td  class='textomenorpreto'><div class='divbtn' style="height:20px; background-color:#F7F7F7"><div class="solicitacao" >Normal |<img src='../imagens/pass.png' width='15' height='15' />|  </div></td>
+ 
+ <td bgcolor=#F7F7F7 align="center" class='texto'><a href="javascript:desativar('90')" onmouseover="tooltip.show('Remover Yuri Guedes da Gerência');" onmouseout="tooltip.hide();" ><div class="solicitacao" style="text-align:center"><a href="javascript:ativar('90')" onmouseover="tooltip.show('Promover Yuri Guedes a Gerente');" onmouseout="tooltip.hide();" ><div class='divbtn' style='height:20px;'><div align="center"><img src="../imagens/no_manager.png" width="15" height="15" style="border:none"/></div></div></div></a></td>
+ 
+ </div>
+ 
+            </tr></table><div align='center'><span class='aviso'>43 Funcionários Cadastrados</span></div></div> 
+<table width="30%" border="0" >
+  <tr class="textomenorpreto">
+      <td bgcolor="#E5E5E5"><div align="center">Legenda:</div></td>
+    <td bgcolor="#E5E5E5" class="solicitacao"><div align="center"></div>      <div align="center"><img src='../imagens/pass.png' width='15' height='15' /> Senha Padrão</div></td>
+    <td bgcolor="#F7F7F7" class="solicitacao"><div align="center">Usuario Normal</div></td>
+    <td bgcolor="#FF5151"  class="solicitacao"><div align="center"></div>      <div align="center">Administrador</div></td>
+    <td bgcolor="#858585"  class="solicitacao"><div align="center"></div>      <div align="center">Usuario Desativado</div></td>
+    <td bgcolor="#A9F3D8"  class="solicitacao"><div align="center"></div>      <div align="center">RH</div></td>
+    <td bgcolor="#AACBF2" class="solicitacao"><div align="center"></div>      <div align="center">Obras</div></td>
+    
+    </tr>
+</table> 
+<script type="text/javascript">
+<!--
+//-->
+  </script>
+
+
+
+<p>&nbsp;</p>
+
+
+    
+
+
+
+<p></p>
+<div class="clear"></div>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+</body>
+</html>

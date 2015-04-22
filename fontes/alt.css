@@ -1,0 +1,32 @@
+#tt {
+font-size: 11px;
+font-family: Verdana, Arial, sans-serif;
+position:absolute;
+display:block;
+}
+#tttop {
+display:block;
+height:5px;
+margin-left:5px;
+overflow:hidden;
+}
+#ttcont {
+	border:2px;
+	/*border-style:dotted;*/
+	border-color:#FFF;
+display:block;
+padding:2px 7px 3px 7px;
+margin-left:5px;
+background-image:url(../imagens/bgalt.png);
+background-repeat:repeat-x;
+color:#FFFFFF;
+-moz-border-radius:0px;
+-webkit-border-radius:0px;
+border-radius:7px;
+}
+#ttbot {
+display:block;
+height:5px;
+margin-left:5px;
+overflow:hidden;
+}

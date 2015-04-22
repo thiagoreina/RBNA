@@ -1,0 +1,478 @@
+@charset "utf-8";
+/* CSS Document */
+
+.form{
+	
+}
+.form:focus {
+	border:2px solid #FFFFFF!important;
+	box-shadow:0 0 10px #FFF!important;
+	moz-box-shadow:0 0 10px #FFF!important;
+	webkit-box-shadow:0 0 10px #FFF!important;
+
+	}
+
+.menu{
+	 width: 96%;
+	 height:auto;
+	 background-color: #F2F2F2;
+	 padding: 10px;
+}
+
+.titulo-topo {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	color: #FFF;
+	font-weight: bold;
+	font-variant: small-caps;
+	line-height: normal;
+}
+.textomenorB {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color:#FFF;
+}
+.textomenor {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	color:#FFF;
+}
+.textomini {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 7px;
+	color:#000;
+}
+.textomenorpreto {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	color: #000;
+}
+.texto {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	color: #333;
+	font-weight: bold;
+	font-variant: small-caps;
+	line-height: normal;
+}
+.link-topo {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-decoration: underline;
+}
+.bg {
+	background-repeat: repeat-x;
+background-attachment: fixed;
+}
+.bgtop {
+	background-image: url(../imagens/bgtop.png);
+	background-repeat: repeat-x;
+}
+.top {
+	background-attachment: fixed;
+	background-image: url(../imagens/divtop.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.aniversario {
+
+
+}
+.aniversario {
+	float: right;
+	height: 100%;
+	width: auto;
+	border-top-color: #06C;
+	border-right-color: #06C;
+	border-bottom-color: #06C;
+	border-left-color: #06C;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	background-image: url(../imagens/bgdiv.png);
+}
+.total {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	min-height:inherit;
+	/*min-height: 800px;*/
+	height: 200%;
+	background-position: center center;
+	background-image: url(../imagens/bgdiv.png);
+	background-repeat: repeat;
+	-moz-border-radius:7px;
+-webkit-border-radius:7px;
+ border-radius:7px;
+	/*background-color: #FFFFFF;
+*/}
+.aniversario1 {
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #06C;
+	border-right-color: #06C;
+	border-bottom-color: #06C;
+	border-left-color: #06C;
+}
+aniversario2 {
+	background-image: url(../imagens/bgtop.png);
+	background-repeat: repeat;
+}
+.divlogin {
+	margin-top: 300px;
+	color: #0E223A;
+	margin-left:35%;
+	width:350px;
+	border: 2px;
+	border-style: double;
+	border-color: #CCCCCC;
+	background-image:url(../imagens/bgdiv3.png);
+	 background-repeat:repeat;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;
+}
+
+.esquerda {
+	border: 2px;
+	border-style: dotted;
+	border-color: #09F;
+	float:left;
+	width: 470px;
+	height: 100%;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;
+	background-color:#EFEFEF;
+	padding:10px;
+	
+}
+.solicitacao {
+	text-align: left;
+	border: 1px;
+	border-style: dotted;
+	border-color: #999;
+	float:left;
+	width: 100%;
+	height: 100%;
+	vertical-align:middle;
+	
+	}
+.divbtn{
+	/*background-image:url(../imagens/bgalt.png);
+	background-repeat:repeat-x;	
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;*/
+	
+}
+.direita {
+	border: 2px;
+	border-style: dotted;
+	border-color: #09F;
+	float: right;
+	width: 470px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;
+	background-color:#EFEFEF;
+	padding:10px;
+	
+}
+.meio {
+	border: 2px;
+	border-style: dotted;
+	border-color: #09F;
+	float: none;
+	width: 974px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;
+	background-color:#EFEFEF;
+	padding:10px;
+	
+}
+.info {
+	border: 2px;
+	border-style: dotted;
+	border-color: #09F;
+	float: none;
+	width: 450px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;
+	background-color:#EFEFEF;
+	padding:10px;
+	
+}
+
+.editar {
+	border: 2px;
+	border-style: dotted;
+	border-color: #09F;
+	float: none;
+	width: 800px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:7px;
+	background-color:#EFEFEF;
+	padding:10px;
+	
+}
+.centro {
+	border: 1px;
+	border-style: dotted;
+	border-color: #09F;
+	float: none;
+	width: 100%;
+	
+}
+
+
+.central {
+	border: 1px;
+	border-style: dotted;
+	border-color: #09F;
+	float:inherit;
+	width: 500px;
+	
+}
+.clear {
+	clear: both;
+}.ativo {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #0C0;
+	font-weight: bold;
+}
+.inativo {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #F00;
+	font-weight: bold;
+}
+.divativo {
+	background-color:#0C0;
+	border: 1px;
+	border-style: dotted;
+	border-color: #000;
+	float:left;
+	width: 100%;
+	height: 100%;
+	
+	}
+	.divinativo {
+		background-color:#F00;
+	border: 1px;
+	border-style: dotted;
+	border-color: #000;
+	float:left;
+	width: 100%;
+	height: 100%;
+	
+	}
+.textomenorpretoB {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000;
+}
+
+/* Inicio Janela Modal */
+
+body {
+font-family:verdana;
+font-size:15px;
+}
+
+a {color:#333; text-decoration:none}
+a:hover {color:#ccc; text-decoration:none}
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+.bgtext { background-color: #faf8dd
+}
+
+#boxes #dialog2 {
+  background:url(../imagens/notice.png) no-repeat 0 0 transparent; 
+  width:326px; 
+  height:229px;
+  padding:50px 0 20px 25px;
+}
+.close{display:block; text-align:right;}
+
+#fixo{
+	border-style:dotted;
+	border-color:#999;
+	position:fixed;
+	bottom:4px;
+	background-image:url(../imagens/bglegenda.png);
+	background-repeat:repeat-x;
+	width:85%;
+	height:60px;
+	margin-left: 7.5%;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+ 	border-radius:7px;
+	display: none;
+	/*margin-right: 20%;
+	*/
+}
+#fixodados{
+	border-style:dotted;
+	border-color:#999;
+	position:fixed;
+	bottom:4px;
+	background-image:url(../imagens/bglegenda.png);
+	background-repeat:repeat-x;
+	width:995px;
+	height:60px;
+	margin-left: 0%;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+ 	border-radius:7px;
+	/*margin-right: 20%;
+	*/
+}
+
+#fixomenor{
+	border-style:dotted;
+	border-color:#999;
+	position:fixed;
+	bottom:6px;
+	background-image:url(../imagens/bglegenda.png);
+	background-repeat:repeat-x;
+	width:350px;
+	height:80px;
+	margin-left:35%;
+	margin-bottom:6px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+ 	border-radius:7px;
+	display: none;
+	/*margin-right: 20%;
+	*/
+}
+
+#legenda{
+	position:absolute;
+	bottom:4px;
+	background-image:url(../imagens/bglegenda.png);
+	background-repeat:repeat-x;
+	width:85%;
+	height:60px;
+	margin-left: 7.5%;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+ 	border-radius:7px;
+	display: none;
+	/*margin-right: 20%;
+	*/
+}
+
+.foto {
+	padding:5px;
+	border: 4px;
+	border-color:#09C;
+	border-style:solid;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+ 	border-radius:7px;
+	
+	}
+
+/* Fim Janela Modal */
+/* Combo Contratante*/
+
+.container {
+	width: 1000px;
+	height: auto;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 10px;
+	margin: auto;
+	text-align: left;
+}
+
+.main_title {
+	background: #cccccc;
+	color: #ffffff;
+	padding: 10px;
+	font-size: 20px;
+	line-height: 20px;
+}
+.content {
+	padding: 2px;
+	min-height: 100px;
+}
+
+.input_container {
+	height: 30px;
+	float: none;
+}
+.input_container input {
+	text-align:center;
+	height: 20px;
+	width: 890px;
+	padding: 3px;
+	border: 1px solid #cccccc;
+	border-radius: 0;
+}
+.input_container ul {
+	float:none;
+	width: 956px;
+	border: 1px solid #eaeaea;
+	position: absolute;
+	z-index: 9;
+	background: #E9E9E9;
+	list-style: none;
+}
+.input_container ul li {
+	font:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	background: #E9E9E9;
+	padding: 3px;
+}
+.input_container ul li:hover {
+	background: #666666;
+	color:#FFF;
+	cursor:pointer;
+}
+#country_list_id {
+	display: none;
+	text-align:left;
+}
+
+/* Fim contratante*/
+
+.div-link{
+	
+	background-color:#EFEFEF
+}
+.div-link:focus{
+	background-color:#CCC
+}
